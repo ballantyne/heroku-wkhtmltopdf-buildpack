@@ -20,13 +20,13 @@ download () {
 }
 
 install () {
-	if [ -f /app/vendor/node/bin/wkhtmltopdf ]; then
+	if [ -f $build_dir/node/bin/wkhtmltopdf ]; then
 	  exit 0
 	else
 	  download
-  	  mkdir -p /app/vendor/node/bin/
-	  mv $build_dir/wkhtmltopdf-amd64 /app/vendor/node/bin/wkhtmltopdf
-	  chmod +x /app/vendor/node/bin/wkhtmltopdf
+  	  mkdir -p $build_dir/node/bin/
+	  mv $build_dir/wkhtmltopdf-amd64 $build_dir/node/bin/wkhtmltopdf
+	  chmod +x $build_dir/node/bin/wkhtmltopdf
 	fi
 }
 
