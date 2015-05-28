@@ -20,7 +20,7 @@ download () {
 }
 
 install () {
-	if [ -f $build_dir/vendor/wkhtmltopdf ]; then
+	if [ -f $build_dir/node/wkhtmltopdf ]; then
 	  exit 0
 	else
 	  download
