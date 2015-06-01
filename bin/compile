@@ -20,13 +20,13 @@ download () {
 }
 
 install () {
-	if [ -f $build_dir/node/bin/wkhtmltopdf ]; then
+	if [ -f $build_dir/bin/wkhtmltopdf ]; then
 	  exit 0
 	else
 	  download
-  	  mkdir -p $build_dir/node/bin/
-	  mv $build_dir/wkhtmltopdf-amd64 $build_dir/node/bin/wkhtmltopdf
-	  chmod +x $build_dir/node/bin/wkhtmltopdf
+  	  mkdir -p $build_dir/bin/
+	  mv $build_dir/wkhtmltopdf-amd64 $build_dir/bin/wkhtmltopdf
+	  chmod +x $build_dir/bin/wkhtmltopdf
 	fi
 }
 
@@ -36,7 +36,7 @@ status "Writing profile script"
 mkdir -p $build_dir/.profile.d
 
 cat <<EOF >$build_dir/.profile.d/000_wkhtmltopdf.sh
-export PATH="/app/node/bin:$PATH"
+export PATH="/app/bin:$PATH"
 EOF
 
 exit 0
