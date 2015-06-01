@@ -36,7 +36,7 @@ status "Writing profile script"
 mkdir -p $build_dir/.profile.d
 
 cat <<EOF >$build_dir/.profile.d/000_wkhtmltopdf.sh
-export PATH="\$HOME/node/bin$PATH"
+export PATH="\$HOME/node/bin:$PATH"
 EOF
 
 exit 0
